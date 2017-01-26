@@ -10,11 +10,14 @@ $(document).ready(function() {
  */
 function initializePage() {
 	$("#testjs").click(function(e) {
-		$('.jumbotron h1').text("Javascript is connected");
+		$(".jumbotron h1").text("Javascript has engaged");
+		$("#testjs").text("Calm yo self");
+		$(".jumbotron p").addClass("active");
 	});
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+	$(".project").click(projectClick);
 
 }
 function projectClick(e) { 
@@ -28,6 +31,10 @@ function projectClick(e) { 
     if (description.length == 0) {
        $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
     } else {
-       description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+		$(containingProject).find(".project-description").toggle();
+       //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
     }
+
+
+    //var theButton = $("#testjs").text("I changed the button text");
 }
